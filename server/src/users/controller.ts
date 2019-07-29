@@ -35,7 +35,7 @@ export default class UserController {
   @Authorized()
   @Get("/users/:id([0-9]+)")
   getUser(@Param("id") id: number) {
-    return User.findOneById(id);
+    return User.findOne(id);
   }
 
   //get every user
