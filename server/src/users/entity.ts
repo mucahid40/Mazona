@@ -28,12 +28,12 @@ export default class User extends BaseEntity {
   @IsString()
   @MinLength(2, { message: "Too short to call it a name"})
   @Column("text")
-  firstName: string | undefined;
+  firstName!: string;
 
   @IsString()
   @MinLength(2, { message : "Too short to call it a lastname"})
   @Column("text")
-  lastName: string | undefined;
+  lastName!: string;
 
   @IsNumber()
   @Column("numeric")
@@ -41,15 +41,15 @@ export default class User extends BaseEntity {
 
   @IsString()
   @Column("text")
-  country: string | undefined
+  country!: string
 
   @IsString()
   @Column("text")
-  city: string | undefined
+  city!: string
 
   @IsString()
   @Column("text")
-  street: string | undefined
+  street?: string
 
   @IsNumber()
   @Column("numeric")
