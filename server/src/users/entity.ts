@@ -36,7 +36,7 @@ export default class User extends BaseEntity {
   lastName!: string;
 
   @IsNumber()
-  @Column("numeric")
+  @Column({type: "numeric", nullable: true})
   phoneNumber?: number;
 
   @IsString()
@@ -48,19 +48,19 @@ export default class User extends BaseEntity {
   city!: string
 
   @IsString()
-  @Column("text")
+  @Column({type: "text", nullable: true})
   street?: string
+
+  @IsString()
+  @Column("text")
+  postalCode!: string
 
   @IsNumber()
   @Column("numeric")
   houseNumber!: number
 
   @IsString()
-  @Column("text")
-  postalCode!: string
-
-  @IsString()
-  @Column("text")
+  @Column({type: "text", nullable: true})
   picture?: string
 
   //initial creation date
