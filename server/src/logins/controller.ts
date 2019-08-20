@@ -5,10 +5,10 @@ import User from '../users/entity'
 
 class AuthenticatePayload {
   @IsString()
-  email: string
+  email!: string
 
   @IsString()
-  password: string
+  password!: string
 }
 
 @JsonController()

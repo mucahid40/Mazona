@@ -6,10 +6,9 @@ import LoginController from "./logins/controller";
 // import GameController from "./games/controller";
 import { verify } from "./jwt";
 import User from "./users/entity";
-
-import * as Koa from "koa";
+import Koa from "koa";
 import { Server } from "http";
-import * as IO from "socket.io";
+import  IO from "socket.io";
 import * as socketIoJwtAuth from "socketio-jwt-auth";
 import { secret } from "./jwt";
 
@@ -26,7 +25,7 @@ useKoaServer(app, {
   ],
   authorizationChecker: (action: Action) => {
     const header: string = action.request.headers.authorization;
-    // it has a bearer token than destructure it and split it at the space
+    // it has a bearer token then destructure it and split it at the space
     if (header && header.startsWith("Bearer ")) {
       const [, token] = header.split(" ");
 
